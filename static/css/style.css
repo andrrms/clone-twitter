@@ -1,0 +1,955 @@
+/*
+ **********************
+ * CORPO
+ **********************
+ */
+
+body {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+/*
+ **********************
+ * BARRA DE NAVEGAÇÃO
+ **********************
+ */
+
+div.header-wrapper {
+  min-width: 260px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+header.main-header {
+  height: 100%;
+  min-width: 260px;
+  position: fixed;
+  top: 0;
+
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+header.main-header div.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Apenas para testes isolados */
+header.main-header.testing {
+  border-right: 1px solid rgb(239, 243, 244);
+}
+
+header.main-header nav {
+  display: flex;
+  flex-direction: column;
+}
+
+header.main-header nav > a {
+  /* Estudar mais sobre display: contents */
+  display: contents;
+}
+
+header.main-header nav figure.icon svg {
+  height: 27px;
+  color: #000;
+  stroke-width: 1.5px;
+}
+
+header.main-header nav figure.icon.logo svg {
+  height: 30px;
+  width: 30px;
+  color: rgb(29, 155, 240);
+  stroke-width: 1px;
+}
+
+header.main-header nav > a figure.icon.logo {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 50%;
+  transition: 0.1s ease background-color;
+}
+
+header.main-header nav > a figure.icon.logo:hover {
+  background-color: rgb(29, 155, 240, 0.1);
+}
+
+header.main-header nav ul {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+header.main-header nav ul li {
+  margin-bottom: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+header.main-header nav ul li.selected span {
+  font-weight: 700;
+}
+
+header.main-header nav ul li figure.icon,
+header.main-header nav ul li figure.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+header.main-header nav ul li.notification figure.icon {
+  position: relative;
+}
+
+header.main-header nav ul li.selected figure.icon svg {
+  stroke-width: 2px;
+}
+
+header.main-header nav ul li.notification figure.icon::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgb(29, 155, 240);
+  top: -4px;
+  right: -4px;
+  border-radius: 50%;
+}
+
+header.main-header nav ul li a {
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-right: auto;
+  padding: 10px;
+  padding-right: 15px;
+
+  background-color: transparent;
+  border-radius: 100px;
+  transition: 0.1s ease background-color;
+}
+
+header.main-header nav ul li:hover a {
+  background-color: rgb(83, 100, 113, 0.1);
+}
+
+header.main-header nav ul a span {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+header.main-header nav button.compose {
+  font-size: 17px;
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  width: 90%;
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  background-color: #1d9bf0;
+  padding: 14px 0;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.1s ease background-color;
+}
+
+header.main-header nav button.compose:hover {
+  background-color: #138bdb;
+}
+
+header.main-header button.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  background-color: transparent;
+  margin-top: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.1s ease background-color;
+}
+
+header.main-header button.profile:hover {
+  background-color: rgb(83, 100, 113, 0.1);
+}
+
+header.main-header figure.profile-picture {
+  width: 40px;
+  height: 40px;
+}
+
+header.main-header figure.profile-picture img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+header.main-header button.profile div.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  flex: 1;
+}
+
+header.main-header button.profile div.name bdi {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+header.main-header button.profile div.name span {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(83, 100, 113);
+}
+
+header.main-header button.profile figure.icon {
+  padding: 0 10px;
+}
+
+header.main-header button.profile figure.icon svg {
+  color: #000;
+  height: 27px;
+  stroke-width: 1.5px;
+}
+
+/*
+ *************
+ * MAIN FEED
+ *************
+ */
+
+main.feed {
+  min-width: 598px;
+  height: 100%;
+}
+
+header.title-bar,
+form.compose,
+article.tweet,
+footer.footer {
+  border: 1px solid rgb(239, 243, 244);
+  border-top: none;
+}
+
+header.title-bar {
+  border-bottom: none;
+}
+
+figure.profile-picture,
+figure.profile-picture img {
+  width: 48px;
+  height: 48px;
+  transition: 0.15s ease;
+}
+
+figure.profile-picture img {
+  border-radius: 48px;
+}
+
+figure.profile-picture:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+/* TITLE BAR */
+
+header.title-bar {
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+header.title-bar a {
+  display: inline-block;
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  margin: 16px 0;
+}
+
+/* COMPOSE TWEET */
+
+form.compose {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  padding: 8px 16px 0 16px;
+  gap: 16px;
+}
+
+form.compose section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form.compose textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 14px 0;
+  font-size: 20px;
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+ul.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  align-items: center;
+}
+
+ul.buttons li {
+  margin-right: 2px;
+}
+
+ul.buttons li.send {
+  margin-left: auto;
+}
+
+ul.buttons button {
+  padding: 6px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+ul.buttons li.send button {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 16px;
+  background-color: rgb(29, 155, 240);
+  color: #fff;
+}
+
+ul.buttons li.send button:disabled {
+  background-color: rgb(29, 155, 240, 0.5);
+  cursor: default;
+}
+
+ul.buttons button figure,
+ul.buttons button figure svg {
+  width: 20px;
+  height: 20px;
+}
+
+ul.buttons button figure svg {
+  stroke-width: 2px;
+  color: rgb(29, 155, 240);
+}
+
+/* TWEET */
+
+ul.tweets article.tweet {
+  border-bottom: 1px solid rgb(239, 243, 244);
+  padding: 0 16px;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+ul.tweets article.tweet:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* TWEETS FEED */
+
+/* LEFT SIDE / PICTURE AREA */
+article.tweet div.container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+/* RIGHT SIDE / TWEET AREA */
+article.tweet section {
+  flex: 1;
+  margin-left: 16px;
+}
+
+/* TWEET PROFILE */
+article.tweet section header {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: rgb(83, 100, 113);
+  cursor: default;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+article.tweet section header a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  word-spacing: 1.25px;
+}
+
+article.tweet section header bdi.name {
+  font-weight: 700;
+}
+
+article.tweet section header a:hover bdi.name {
+  text-decoration: underline;
+}
+
+article.tweet section header span.user {
+  color: rgb(83, 100, 113);
+}
+
+/* TWEET BODY */
+article.tweet section p {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+article.tweet section p:first-of-type {
+  margin-top: 4px;
+}
+
+/* // THREAD STYLE (experimental)
+ul.tweets li.thread article.tweet {
+  border-bottom: none;
+}
+
+ul.tweets > :last-of-type li.thread article.tweet {
+  border-bottom: rgb(239, 243, 244);
+}
+
+li.thread article.tweet div.container {
+  padding-top: 0;
+}
+
+li.thread article.tweet div.picture-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li.thread article.tweet div.picture-area::before {
+  content: "";
+  width: 2px;
+  height: 10px;
+  margin-bottom: 4px;
+  background-color:rgb(239, 243, 244);
+}
+
+li.thread article.tweet div.picture-area::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  margin-top: 4px;
+  background-color:rgb(239, 243, 244);
+} */
+
+/* TWEET BUTTONS */
+article.tweet section footer {
+  width: 100%;
+  margin: 4px 0;
+  margin-left: -16px;
+}
+
+article.tweet section footer ul {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article.tweet section footer li {
+  display: flex;
+  justify-items: center;
+}
+
+article.tweet section footer button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+article.tweet section footer button figure,
+article.tweet section footer button figure svg {
+  width: 18px;
+  height: 18px;
+}
+
+article.tweet section footer button figure {
+  padding: 10px;
+  border-radius: 50px;
+}
+
+article.tweet section footer button figure svg,
+article.tweet section footer button span.count {
+  stroke-width: 2px;
+  color: rgb(83, 100, 113);
+}
+
+article.tweet section footer button:hover figure {
+  background-color: rgb(29, 155, 240, 0.2);
+}
+
+article.tweet section footer button:hover svg,
+article.tweet section footer button:hover span.count {
+  color: rgb(29, 155, 240);
+}
+
+article.tweet section footer button span.count.zero {
+  display: none;
+}
+
+main.feed section footer span,
+main.feed section footer figure,
+main.feed section footer svg {
+  transition: 0.15s ease;
+}
+
+/* TWEET BUTTONS SPECIFIC COLORS */
+
+/* LIKE BUTTON */
+main.feed section button.like:hover svg,
+main.feed section button.like:hover span.count {
+  color: rgb(249, 24, 128);
+}
+
+main.feed section button.like:hover figure {
+  background-color: rgb(249, 24, 128, 0.2);
+}
+
+main.feed section button.like.activated svg,
+main.feed section button.like.activated span.count {
+  color: rgb(249, 24, 128);
+}
+
+/* RETWEET BUTTON */
+main.feed section button.retweet:hover svg,
+main.feed section button.retweet:hover span.count {
+  color: rgb(0, 186, 124);
+}
+
+main.feed section button.retweet:hover figure {
+  background-color: rgb(0, 186, 124, 0.2);
+}
+
+main.feed section button.retweet.activated svg,
+main.feed section button.retweet.activated span.count {
+  color: rgb(0, 186, 124);
+}
+
+footer.footer p.up-to-date {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(83, 100, 113);
+  padding: 100px 0;
+  user-select: none;
+  cursor: default;
+}
+
+/*
+ *************
+ * ASIDE BAR
+ *************
+ */
+
+aside.lateral-bar {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+figure.profile-picture,
+figure.profile-picture img {
+  width: 48px;
+  height: 48px;
+}
+
+figure.profile-picture img {
+  border-radius: 48px;
+}
+
+section.now,
+section.follow-recommendation {
+  width: 100%;
+  background-color: rgb(239, 243, 244, 0.75);
+  border-radius: 15px;
+}
+
+section.now h1,
+section.follow-recommendation h1 {
+  cursor: default;
+}
+
+/* SEARCH BAR */
+
+figure.icon,
+figure.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+form.search-bar {
+  width: 100%;
+  background-color: #fff;
+  padding: 6px 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+form.search-bar div.wrapper {
+  background-color: rgb(239, 243, 244);
+  border-radius: 15px;
+  flex: 1;
+  width: 100%;
+  border-radius: 100px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+form.search-bar:focus-within div.wrapper {
+  background-color: #fff;
+  /* Hack */
+  box-shadow: inset 0px 0px 0px 2px rgb(29, 155, 240);
+}
+
+form.search-bar:focus-within figure.icon svg {
+  color: rgb(29, 155, 240);
+}
+
+form.search-bar input {
+  margin-left: 18px;
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #000;
+  flex: 1;
+}
+
+form.search-bar figure.icon {
+  margin-left: 16px;
+}
+
+form.search-bar figure.icon svg {
+  color: rgb(83, 100, 113);
+}
+
+/* WHATS HAPPENING SECTION */
+
+section.now,
+section.follow-recommendation {
+  margin-top: 15px;
+}
+
+section.now h1,
+section.follow-recommendation h1 {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 14px 18px;
+}
+
+ul.news-list {
+  width: 100%;
+}
+
+ul.news-list li {
+  padding: 10px 18px;
+}
+
+ul.news-list li.moment {
+  display: flex;
+}
+
+ul.news-list li.moment,
+ul.news-list li.see-more,
+ul.profile-list li.see-more {
+  transition: 0.2s ease;
+}
+
+ul.news-list li.moment:hover,
+ul.news-list li.see-more:hover,
+ul.profile-list li.see-more:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+ul.news-list li.moment a.category {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+ul.news-list li.moment a.category:hover {
+  text-decoration: underline;
+}
+
+ul.news-list li.moment h2 {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  margin-top: 6px;
+  color: #000;
+}
+
+ul.news-list li.moment p.related {
+  display: flex;
+  flex-flow: row wrap;
+  line-height: 18px;
+}
+
+ul.news-list li.moment p.related a {
+  margin-left: 4px;
+}
+
+ul.news-list li.moment p.related a:hover {
+  text-decoration: underline;
+}
+
+ul.news-list li.moment p.related a:last-child {
+  margin-left: 0;
+}
+
+ul.news-list li.moment p.related,
+ul.news-list li.moment p {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+  margin-top: 6px;
+}
+
+ul.news-list li.moment p.related a {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(29, 155, 240);
+  text-decoration: none;
+}
+
+ul.news-list li.moment img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 15px;
+}
+
+li.moment.linked-topic div.article-summary {
+  width: 100%;
+  height: 100%;
+  max-height: 150px;
+  border: 1px solid rgb(83, 100, 113, 0.25);
+  border-radius: 10px;
+  /* background-color: #fff; */
+  display: flex;
+  margin-top: 8px;
+}
+
+li.moment.linked-topic div.article-summary:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+li.moment.linked-topic div.article-summary span {
+  padding: 10px;
+  flex: 1;
+}
+
+li.moment.linked-topic div.article-summary .category {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: rgb(83, 100, 113);
+}
+
+li.moment.linked-topic div.article-summary .title {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000;
+  margin-top: 6px;
+}
+
+li.moment.linked-topic div.article-summary figure {
+  width: 100px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 10px 10px 0;
+}
+
+li.moment.linked-topic div.article-summary img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+ul.news-list li.see-more {
+  padding: 16px 18px;
+  border-radius: 0 0 15px 15px;
+}
+
+ul.news-list li.see-more a {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: rgb(29, 155, 240);
+}
+
+ul.profile-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+ul.profile-list li.profile:first-of-type {
+  margin: 0;
+}
+
+ul.profile-list li.profile {
+  padding: 8px 16px;
+  transition: 0.2s ease;
+}
+
+ul.profile-list li.profile:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+ul.profile-list li.see-more {
+  padding: 16px 18px;
+  border-radius: 0 0 15px 15px;
+}
+
+ul.profile-list li.see-more a {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: rgb(29, 155, 240);
+}
+
+ul.profile-list li.profile div.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ul.profile-list li.profile div.name {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul.profile-list li.profile div.name bdi,
+ul.profile-list li.profile div.name span {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+ul.profile-list li.profile div.name bdi {
+  font-weight: 700;
+  color: #000;
+}
+
+ul.profile-list li.profile div.name span {
+  font-weight: 400;
+  color: rgb(83, 100, 113);
+  margin-top: 4px;
+}
+
+ul.profile-list li.profile button.follow {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  margin-left: auto;
+  padding: 8px 18px;
+  transition: 0.2s ease;
+}
+
+ul.profile-list li.profile button.follow:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+
+footer.legal {
+  width: 100%;
+  margin-top: 16px;
+  padding-bottom: 60px;
+}
+
+footer.legal ul {
+  display: flex;
+  flex-flow: row wrap;
+  line-height: 22px;
+}
+
+footer.legal li {
+  margin-right: 10px;
+}
+
+footer.legal li:last-child {
+  margin-right: 0;
+}
+
+footer.legal p,
+footer.legal a {
+  font-family: Chirp, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: rgb(83, 100, 113);
+}
+
+footer.legal a {
+  text-decoration: none;
+}
+
+footer.legal a:hover {
+  text-decoration: underline;
+}

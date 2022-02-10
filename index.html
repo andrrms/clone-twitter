@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="static/css/reset.css">
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <title>Tuíter</title>
+</head>
+<body>
+  
+  <div class="header-wrapper">
+    <header class="main-header">
+      <div class="container">
+        <nav class="navigation">
+          <a href="#">
+            <figure class="icon logo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-Tuíter">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+              </svg>
+              <figcaption>Logo do Pássaro do Tuíter</figcaption>
+            </figure>
+          </a>
+          <ul>
+            <li class="selected notification">
+              <a href="#">
+                <figure class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <path d="M9 22V12h6v10"/>
+                  </svg>
+                  <figcaption>Ícone de Casa</figcaption>
+                </figure>
+                <span>Página Inicial</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <figure class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hash">
+                    <path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/>
+                  </svg>
+                  <figcaption>Ícone de Jogo da Velha</figcaption>
+                </figure>
+                <span>Explorar</span>
+              </a>
+            </li>
+            <li class="notification">
+              <a href="#">
+                <figure class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/>
+                  </svg>
+                  <figcaption>Ícone de Sino</figcaption>
+                </figure>
+                <span>Notificações</span>
+              </a>
+            </li>
+          </ul>
+          <button class="compose">Tuítar</button>
+        </nav>
+    
+        <button class="profile">
+          <figure class="profile-picture">
+            <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+            <figcaption>Foto de Perfil</figcaption>
+          </figure>
+          <div class="name">
+            <bdi class="user-name">Fulano de Tal</bdi>
+            <span>@fulano</span>
+          </div>
+          <figure class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+              <circle cx="12" cy="12" r="1"/>
+              <circle cx="19" cy="12" r="1"/>
+              <circle cx="5" cy="12" r="1"/>
+            </svg>
+            <figcaption>Ícone de Elipse</figcaption>
+          </figure>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="feed">
+    <header class="title-bar">
+      <a href="#">Página Inicial</a>
+    </header>
+    <form action="#" class="compose">
+      <figure class="profile-picture">
+        <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+        <figcaption>Foto de Perfil</figcaption>
+      </figure>
+      <section>
+        <textarea name="compose-tweet-input" id="tweet-input" rows="1" placeholder="O que está acontecendo?"></textarea>
+        <ul class="buttons">
+          <li>
+            <button title="Adicionar imagem">
+              <figure class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-image" viewBox="0 0 24 24">
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="m21 15-5-5L5 21"/>
+                </svg>
+                <figcaption>Ícone com foto</figcaption>
+              </figure>
+            </button>
+          </li>
+          <li>
+            <button title="Adicionar enquete">
+              <figure class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-bar-chart-2" viewBox="0 0 24 24">
+                  <path d="M18 20V10M12 20V4M6 20v-6"/>
+                </svg>
+                <figcaption>Ícone com três barras verticais</figcaption>
+              </figure>
+            </button>
+          </li>
+          <li>
+            <button title="Adicionar emoji">
+              <figure class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-smile" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+                </svg>
+                <figcaption>Ícone com rosto sorridente</figcaption>
+              </figure>
+            </button>
+          </li>
+          <li class="send">
+            <button title="Enviar tweet" disabled>Tuítar</button>
+          </li>
+        </ul>
+      </section>
+    </form>
+
+    <ul class="tweets">
+      <li class="thread">
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>02/02/2022</time>
+              </header>
+              <p>Tuíte de tipo 1</p>
+              <p>Eu odeio maçã farinhenta</p>
+              <p>Primeiro da thread</p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">0</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet activated" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">1</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+      <li class="thread">
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>02/02/2022</time>
+              </header>
+              <p>Tuíte de tipo 1</p>
+              <p>Eu odeio maçã farinhenta</p>
+              <p>Segundo da thread</p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">0</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet activated" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">1</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+      <li class="thread">
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>02/02/2022</time>
+              </header>
+              <p>Tuíte de tipo 1</p>
+              <p>Eu odeio maçã farinhenta</p>
+              <p>Ultimo da thread</p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">0</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet activated" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">1</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>01/02/2022</time>
+              </header>
+              <p>Lista de coisas que eu quero adicionar aqui:</p>
+              <p>
+                - Estilo diferente para tuítes com imagens</br>
+                - Estilo diferente para rts com citação</br>
+                - Estilo diferente para threads</br>
+                - Estilo diferente para perfis com ícone NFT
+              </p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">3</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">4</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like activated" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">7</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>02/02/2022</time>
+              </header>
+              <p>Lista de coisas que eu quero adicionar aqui pt. 2:</p>
+              <p>
+                - Marcas de perfil verificado</br>
+                - Menus popup</br>
+                - Dark mode</br>
+              </p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">0</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet activated" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">1</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>02/02/2022</time>
+              </header>
+              <p>Tuíte de tipo 1</p>
+              <p>Eu odeio maçã farinhenta</p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">0</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet activated" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">1</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="tweet">
+          <div class="container">
+            <div class="picture-area"> <!-- Lined for threads -->
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+            </div>
+            <section>
+              <header class="author-info">
+                <a href="#">
+                  <bdi class="name">Fulano de Tal</bdi>
+                  <span class="user">@fulano</span>
+                </a>
+                <span>&bull;</span>
+                <time>02/02/2022</time>
+              </header>
+              <p>Tuíte de tipo 1</p>
+              <p>Eu odeio maçã farinhenta</p>
+              <footer class="action-buttons">
+                <ul>
+                  <li>
+                    <button class="reply" title="Responder no Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-message-square" viewBox="0 0 24 24">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                        <figcaption>Ícone de balão de fala</figcaption>
+                      </figure>
+                      <span class="count zero">0</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="retweet activated" title="Retweetar">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-repeat" viewBox="0 0 24 24">
+                          <path d="m17 1 4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <figcaption>Ícone de repetição</figcaption>
+                      </figure>
+                      <span class="count">1</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="like" title="Curtir Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-heart" viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <figcaption>Ícone de coração</figcaption>
+                      </figure>
+                      <span class="count">2</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="share" title="Enviar o Tweet">
+                      <figure class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-share" viewBox="0 0 24 24">
+                          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                        </svg>
+                        <figcaption>Ícone de seta para cima saindo de uma caixa</figcaption>
+                      </figure>
+                    </button>
+                  </li>
+                </ul>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </li>
+    </ul>
+
+    <footer class="footer">
+      <p class="up-to-date">Você está em dia!</p>
+    </footer>
+  </main>
+
+  <aside class="lateral-bar">
+    <div class="lateral-wrapper">
+      <form action="#" class="search-bar">
+        <div class="wrapper">
+          <label for="search">
+            <figure class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+              <figcaption>Lente de Aumento</figcaption>
+            </figure>
+          </label>
+          <input type="text" name="search" id="search" placeholder="Buscar no Tuíter">
+        </div>
+      </form>
+      <section class="now">
+        <h1>O que está acontecendo</h1>
+        <ul class="news-list">
+          <li class="moment">
+            <div class="container">
+              <a href="#" class="category">Categoria 01</a>
+              <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident labore laborum temporibus minus illo.</h2>
+              <p class="related">
+                Assuntos do Momento:
+                <a href="#">Tópico 01</a>,
+                <a href="#">Tópico 02</a>
+              </p>
+            </div>
+            <img src="static/images/foto-stock.jpg" alt="Imagem da Notícia">
+          </li>
+          <li class="moment">
+            <div class="container">
+              <a href="#" class="category">Categoria 02</a>
+              <h2>Neque quis dignissimos eveniet, necessitatibus excepturi.</h2>
+              <p class="tweets-count">560 Tuítes</p>
+            </div>
+            <img src="static/images/foto-stock.jpg" alt="Imagem da Notícia">
+          </li>
+          <li class="moment linked-topic">
+            <div class="container">
+              <a href="#" class="category">Categoria 03</a>
+              <h2>Tópico 01</h2>
+              <div class="article-summary">
+                <span>
+                  <h6 class="category">Categoria 02</h6>
+                  <h5 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam tempore possimus explicabo distinctio quia eum tenetur.</h5>
+                </span>
+                <figure>
+                  <img src="static/images/foto-stock.jpg" alt="Imagem da Notícia">
+                  <figcaption>Imagem da Notícia</figcaption>
+                </figure>
+              </div>
+              <p>560 Tuítes</p>
+            </div>
+          </li>
+          <li class="see-more">
+            <a href="#">Mostrar mais</a>
+          </li>
+        </ul>
+      </section>
+      <section class="follow-recommendation">
+        <h1>Quem seguir</h1>
+        <ul class="profile-list">
+          <li class="profile">
+            <div class="container">
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+              <div class="name">
+                <bdi class="user-name">Fulano de Tal</bdi>
+                <span>@fulano</span>
+              </div>
+              <button class="follow">Seguir</button>
+            </div>
+          </li>
+          <li class="profile">
+            <div class="container">
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+              <div class="name">
+                <bdi class="user-name">Fulano de Tal</bdi>
+                <span>@fulano</span>
+              </div>
+              <button class="follow">Seguir</button>
+            </div>
+          </li>
+          <li class="profile">
+            <div class="container">
+              <figure class="profile-picture">
+                <img src="../static/images/john-doe.jpg" alt="Foto de Perfil">
+                <figcaption>Foto de Perfil</figcaption>
+              </figure>
+              <div class="name">
+                <bdi class="user-name">Fulano de Tal</bdi>
+                <span>@fulano</span>
+              </div>
+              <button class="follow">Seguir</button>
+            </div>
+          </li>
+          <li class="see-more">
+            <a href="#">Mostrar mais</a>
+          </li>
+        </ul>
+      </section>
+      <footer class="legal">
+        <nav>
+          <ul>
+            <li><a href="#">Termos de Serviço</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Política de cookies</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Informações de anúncios</a></li>
+            <li><p>&copy; 2022 Tuíter, Inc.</p></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+  </aside>
+
+</body>
+</html>
