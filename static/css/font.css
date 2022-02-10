@@ -1,0 +1,27 @@
+@font-face {
+  src: url(../fonts/chirp-regular-web.woff);
+  font-family: Chirp;
+  font-weight: 400;
+  font-variant-ligatures: common-ligatures, additional-ligatures;
+}
+
+@font-face {
+  src: url(../fonts/chirp-medium-web.woff);
+  font-family: Chirp;
+  font-weight: 500;
+  font-variant-ligatures: common-ligatures, additional-ligatures;
+}
+
+@font-face {
+  src: url(../fonts/chirp-bold-web.woff);
+  font-family: Chirp;
+  font-weight: 700;
+  font-variant-ligatures: common-ligatures, additional-ligatures;
+}
+
+@font-face {
+  src: url(../fonts/chirp-heavy-web.woff);
+  font-family: Chirp;
+  font-weight: 900;
+  font-variant-ligatures: common-ligatures, additional-ligatures;
+}
